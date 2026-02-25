@@ -21,6 +21,7 @@ const whatsappLink = (tour: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE(tour)}`;
 
 interface Tour {
+  id: string;
   name: string;
   image: string;
   description: string;
@@ -31,6 +32,7 @@ interface Tour {
 
 const tours: Tour[] = [
   {
+    id: "porto-galinhas",
     name: "Porto de Galinhas",
     image: portoGalinhas,
     description: "Mergulhe nas piscinas naturais mais famosas do Brasil com peixes coloridos e águas cristalinas.",
@@ -39,6 +41,7 @@ const tours: Tour[] = [
     highlight: "⭐ Destino mais amado!",
   },
   {
+    id: "praia-carneiros",
     name: "Praia dos Carneiros",
     image: praiaCarneiros,
     description: "Paraíso com águas calmas, coqueiros e a linda Capelinha de São Benedito na beira da praia.",
@@ -47,6 +50,7 @@ const tours: Tour[] = [
     highlight: "🌴 Natureza pura",
   },
   {
+    id: "maragogi",
     name: "Maragogi",
     image: maragogi,
     description: "As piscinas naturais do Caribe Brasileiro com águas azul-turquesa deslumbrantes.",
@@ -55,6 +59,7 @@ const tours: Tour[] = [
     highlight: "🐠 Snorkel incrível",
   },
   {
+    id: "ilha-santo-aleixo",
     name: "Ilha de Santo Aleixo",
     image: ilhaSantoAleixo,
     description: "Ilha paradisíaca preservada com praias intocadas e natureza exuberante.",
@@ -63,6 +68,7 @@ const tours: Tour[] = [
     highlight: "🏝️ Exclusivo & raro",
   },
   {
+    id: "itamaraca",
     name: "Ilha de Itamaracá",
     image: itamaraca,
     description: "Ilha histórica com Forte Orange holandês, praias tranquilas e encontro de peixe-boi.",
@@ -71,6 +77,7 @@ const tours: Tour[] = [
     highlight: "🐬 Peixe-boi",
   },
   {
+    id: "recife",
     name: "City Tour Recife",
     image: recife,
     description: "Conheça o Recife Antigo, Marco Zero, museus e a rica história da capital pernambucana.",
@@ -79,6 +86,7 @@ const tours: Tour[] = [
     highlight: "🏛️ História & cultura",
   },
   {
+    id: "olinda",
     name: "City Tour Olinda",
     image: Olinda,
     description: "Explore o patrimônio histórico de Olinda, igrejas coloniais e o famoso Carnaval.",
@@ -87,6 +95,7 @@ const tours: Tour[] = [
     highlight: "🎭 Patrimônio mundial",
   },
   {
+    id: "joao-pessoa",
     name: "João Pessoa",
     image: joaoPessoa,
     description: "A segunda cidade mais verde do mundo com praias exuberantes e pôr do sol inesquecível.",
@@ -95,6 +104,7 @@ const tours: Tour[] = [
     highlight: "🌅 Pôr do sol único",
   },
   {
+    id: "praia-milagres",
     name: "Praia dos Milagres",
     image: praiaMilagres,
     description: "Águas cristalinas e areia branca em uma das praias mais deslumbrantes de Alagoas.",
@@ -103,6 +113,7 @@ const tours: Tour[] = [
     highlight: "✨ Beleza única",
   },
   {
+    id: "cabo-santo-agostinho",
     name: "Cabo de Santo Agostinho",
     image: caboSantoAgostinho,
     description: "Praias paradisíacas como Itapoama, Paiva, Xaréu, Enseadas, Gaibu, Paraíso de Suape e a encantadora Calhetas.",
@@ -111,6 +122,7 @@ const tours: Tour[] = [
     highlight: "🏖️ Praias incríveis",
   },
   {
+    id: "pipa-rn",
     name: "Pipa - RN",
     image: pipaRn,
     description: "Encante-se com falésias coloridas, praias paradisíacas e o centrinho charmoso. Água cristalina, natureza preservada e paisagens deslumbrantes.",
@@ -118,9 +130,9 @@ const tours: Tour[] = [
     includes: "Transfer incluso",
     highlight: "🌊 Praias Perfeitas",
   },
-
   {
-    name: "Tranfer Aeroporto",
+    id: "transfer",
+    name: "Tranfer Aeropuerto",
     image: transfer,
     description: "É a praticidade do nosso transfer privativo com carro adaptado e espaço especial para suas bagagens, garantindo uma viagem tranquila do início ao fim!",
     duration: "A combinar",
@@ -173,7 +185,7 @@ export function ToursSection() {
 
 function TourCard({ tour }: { tour: Tour }) {
   return (
-    <div className="group relative bg-card rounded-2xl overflow-hidden shadow-card-custom hover:shadow-card-hover-custom transition-all duration-300 hover:-translate-y-1 flex flex-col">
+    <div id={tour.id} className="group relative bg-card rounded-2xl overflow-hidden shadow-card-custom hover:shadow-card-hover-custom transition-all duration-300 hover:-translate-y-1 flex flex-col">
       {/* Image */}
       <div className="relative h-52 overflow-hidden">
         <img
