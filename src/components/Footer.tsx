@@ -8,18 +8,18 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 const destinations = [
-  "Porto de Galinhas",
-  "Praia dos Carneiros",
-  "Maragogi",
-  "Ilha de Santo Aleixo",
-  "Itamaracá",
-  "City Tour Recife",
-  "City Tour Olinda",
-  "João Pessoa",
-  "Praia dos Milagres",
-  "Cabo de Santo Agostinho",
-  "Pipa - RN",
-  "Transfer do Aeropuerto",
+  { id: "porto-galinhas", name: "Porto de Galinhas" },
+  { id: "praia-carneiros", name: "Praia dos Carneiros" },
+  { id: "maragogi", name: "Maragogi" },
+  { id: "ilha-santo-aleixo", name: "Ilha de Santo Aleixo" },
+  { id: "itamaraca", name: "Itamaracá" },
+  { id: "recife", name: "City Tour Recife" },
+  { id: "olinda", name: "City Tour Olinda" },
+  { id: "joao-pessoa", name: "João Pessoa" },
+  { id: "praia-milagres", name: "Praia dos Milagres" },
+  { id: "cabo-santo-agostinho", name: "Cabo de Santo Agostinho" },
+  { id: "pipa-rn", name: "Pipa - RN" },
+  { id: "transfer", name: "Transfer do Aeropuerto" },
 ];
 
 export function Footer() {
@@ -79,13 +79,13 @@ export function Footer() {
             <h4 className="font-display font-bold text-lg text-sun mb-5">Destinos</h4>
             <ul className="space-y-2.5">
               {destinations.map((dest) => (
-                <li key={dest}>
+                <li key={dest.id}>
                   <a
-                    href="#passeios"
+                    href={`#${dest.id}`}
                     className="text-white/70 hover:text-turquoise-light text-sm transition-colors flex items-center gap-2"
                   >
                     <span className="w-1 h-1 rounded-full bg-turquoise inline-block" />
-                    {dest}
+                    {dest.name}
                   </a>
                 </li>
               ))}
