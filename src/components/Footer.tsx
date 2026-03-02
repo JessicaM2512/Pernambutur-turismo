@@ -47,14 +47,18 @@ export function Footer() {
             {/* Social */}
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/pernambutur_turismo/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-sun hover:text-ocean flex items-center justify-center transition-all duration-200"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61581903877814"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-sun hover:text-ocean flex items-center justify-center transition-all duration-200"
                 aria-label="Facebook"
               >
